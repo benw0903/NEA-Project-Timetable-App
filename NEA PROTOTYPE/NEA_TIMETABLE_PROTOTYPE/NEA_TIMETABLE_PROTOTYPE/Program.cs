@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace NEA_TIMETABLE_PROTOTYPE
 {
@@ -34,6 +35,7 @@ Press any key to enter");
             Console.WriteLine("Do you have login details? yes/no");
             string option = Console.ReadLine();
             option = option.ToLower();
+            Console.WriteLine("");
 
             while(option != "yes" && option != "no")
             {
@@ -63,13 +65,14 @@ Press any key to enter");
             string password;
 
 
-            Console.WriteLine("Would you like to make an account?");
+            Console.WriteLine("Would you like to make an account? yes/no");
             string option = Console.ReadLine();
             option = option.ToLower();
+            Console.WriteLine("");
 
             while (option != "yes" && option != "no")
             {
-                Console.WriteLine("Would you like to make an account?");
+                Console.WriteLine("Would you like to make an account? yes/no");
                 option = Console.ReadLine();
             }
 
@@ -89,23 +92,25 @@ Press any key to enter");
                 Console.WriteLine("Please create a password.");
                 password = Console.ReadLine();
 
-                Console.WriteLine("Are you happy with your username and password?");
+                Console.WriteLine("Are you happy with your username and password? yes/no");
                 string option2= Console.ReadLine();
-                option2 = option2.ToLower();
+                option2 = option2.ToLower(); 
+                Console.WriteLine("");
 
                 while (option2 != "yes" && option2 == "no")
                 {
                     Console.WriteLine("Please create a username.");
                     username = Console.ReadLine();
-
                     Console.WriteLine("");
 
                     Console.WriteLine("Please create a password.");
                     password = Console.ReadLine();
+                    Console.WriteLine("");
 
-                    Console.WriteLine("Are you happy with your username and password?");
+                    Console.WriteLine("Are you happy with your username and password? yes/no");
                     option2 = Console.ReadLine();
                     option2 = option2.ToLower();
+                    Console.WriteLine("");
                 }
 
                 if (option2 == "yes")
@@ -113,7 +118,8 @@ Press any key to enter");
                     Console.WriteLine("What would you like the name of your file to be?");
                     string fileName = Console.ReadLine();
                     string file = fileName + ".txt";
-                     
+                    Console.WriteLine("");
+
                     using (StreamWriter sw = new StreamWriter(file))
                     {
                         sw.WriteLine(username + " " + password);             
@@ -131,18 +137,24 @@ Press any key to enter");
 
             Console.WriteLine("Please enter your username.");
             string username = Console.ReadLine();
+            Console.WriteLine("");
 
             Console.WriteLine("Please enter your password. ");
             string password = Console.ReadLine();
-
-            string fileName = Console.ReadLine();
-            string file = fileName + ".txt";
+            Console.WriteLine("");
 
             Console.WriteLine("What file would you like to open");
+            string fileName = Console.ReadLine();
+            Console.WriteLine("");
+
+            Console.WriteLine("");
+            string file = fileName + ".txt";
+
+            
             if(CheckUsernameAndPassword(username,password,file) == true)
             {
-                Console.WriteLine("Your username and password were valid");
-                CreateTable();
+                Console.WriteLine("Your username and password were valid hello " +username+".");
+                StartingDay(file);
             }
             if (CheckUsernameAndPassword(username, password, file) == false)
             {
@@ -193,7 +205,88 @@ Exit /exit
             return false;
         }
 
-        static void CreateTable()
+        
+        static void StartingDay(string file)
+        {
+
+            string[] daysOfTheWeek = new string[7] { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+            Console.WriteLine("Please enter the starting day of the week for you MyTime Timetable.");
+            string startingDay = Console.ReadLine();
+            Console.WriteLine("");
+            startingDay = startingDay.ToLower();
+            int count = 1;
+            //assigning numbers for the starting days of your mytime timtable
+
+            for (int i = 0; i < 7; i++)
+            {
+                if (i == 7)
+                {
+                    Console.WriteLine("Please enter the ending day of the week for your MyTime Timetable.");
+                    startingDay = Console.ReadLine();
+                    startingDay = startingDay.ToLower();
+                    i = 0;
+                }
+                if (startingDay != daysOfTheWeek[i])
+                {
+                    Console.WriteLine(startingDay + " != to " + daysOfTheWeek[i] + ".(" + count + "/7)");
+                    count = count + 1;
+                }
+                if (startingDay == daysOfTheWeek[i])
+                {
+                    Console.WriteLine(startingDay + " == to " + daysOfTheWeek[i] + ".(" + (i + 1) + "/7)");
+                    count = count + 1;
+                    EndingDay(daysOfTheWeek[i],i+1,file);
+                }
+            }
+        }
+        static void EndingDay(string startingDay ,int startingDayNum,string file)
+        {
+            string[] daysOfTheWeek = new string[7] { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+            int count = 1;
+            Console.WriteLine("Please enter the ending day of the week for your MyTime Timetable.");
+            string endingDay = Console.ReadLine();
+            endingDay = endingDay.ToLower();
+            //assigning numbers for the ending days of your mytime timtable
+
+            for (int i = 0; i < 7; i++)
+            {
+                if (i == 7)
+                {
+                    Console.WriteLine("Please enter the ending day of the week for your MyTime Timetable.");
+                    endingDay = Console.ReadLine();
+                    endingDay = endingDay.ToLower();
+                    i = 0;
+                }
+                if (endingDay != daysOfTheWeek[i])
+                {
+                    Console.WriteLine(endingDay + " != to " + daysOfTheWeek[i] + ".(" + count + "/7)");
+                    count = count + 1;
+                }
+                if (endingDay == daysOfTheWeek[i])
+                {
+                    Console.WriteLine(endingDay + " == to " + daysOfTheWeek[i] + ".(" + (i + 1) + "/7)");
+                    count = count + 1;
+                    CreateTable(startingDay, startingDayNum, daysOfTheWeek[i], i + 1,file);
+                    
+                }
+
+            }
+        }
+
+        static void CreateTable(string startingDay, int startingDayNum,string endingDay,int endingDayNum,string file)
+        {
+
+
+            int[,] table = new int[6, 6];
+            using (StreamWriter sw = new StreamWriter(file))
+            {
+                string text = Console.ReadLine();
+                sw.WriteLine(text);
+                sw.WriteLine("ben");
+            }
+
+        }
+        static void TableInfo(string startingDay, int startingDayNum, string endingDay, int endingDayNum)
         {
 
         }
