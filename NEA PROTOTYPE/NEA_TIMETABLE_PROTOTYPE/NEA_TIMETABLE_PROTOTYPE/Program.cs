@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Services;
 
 namespace NEA_TIMETABLE_PROTOTYPE
 {
@@ -277,20 +278,70 @@ Exit /exit
         {
 
 
-            int[,] table = new int[6, 6];
-            using (StreamWriter sw = new StreamWriter(file))
+            string[,] table = new string[6, 6];
+            for(int i = 0; i < 35; i++)
             {
-                string text = Console.ReadLine();
-                sw.WriteLine(text);
-                sw.WriteLine("ben");
+                string block = "";
+                TableBlock(block);
+                if (i == 35)
+                {
+                    table[0][0] = block;
+                    //when [6][0]  [6-6][0+1]
+                }
+            }
+            
+            
+        }
+        
+        static string TableBlock(string block)
+        {
+            Console.WriteLine("Enter a starting time that is is on a 12 hour clock.");
+            int sTime = int.Parse(Console.ReadLine());
+            while(sTime >= 0 || sTime <= 12)
+            {
+                sTime = int.Parse(Console.ReadLine());
             }
 
-        }
-        static void TableInfo(string startingDay, int startingDayNum, string endingDay, int endingDayNum)
-        {
+            Console.WriteLine("Is this am or pm?");
+            string sAmOrPm = Console.ReadLine();
+            while (sAmOrPm == "am" || sAmOrPm == "pm")
+            {
+                sAmOrPm = Console.ReadLine();
+            }
 
-        }
+            Console.WriteLine("Enter a ending time that is is on a 12 hour clock.");
+            int eTime = int.Parse(Console.ReadLine());
+            while (eTime >= 0 || eTime <= 12)
+            {
+                eTime = int.Parse(Console.ReadLine());
+            }
 
+            Console.WriteLine("Is this am or pm?");
+            string eAmOrPm = Console.ReadLine();
+            while (eAmOrPm == "am" || eAmOrPm =="pm")
+            {
+                eAmOrPm = Console.ReadLine();
+            }
+
+            Console.WriteLine("What are you doing in this time period.");
+            string activity = Console.ReadLine();
+
+            Console.WriteLine("Are you happy with what you have enterd");
+
+
+
+            block = @"________________
+ /                \
+|"+sTime + sAmOrPm+"-"+eTime+eAmOrPm+@"                 |  
+|                  | 
+| " + activity + @"                 |     
+|                  | 
+|                  |
+ \                /
+  ________________
+";
+            return block;
+        }
         static void TableDisplay()
         {
 
