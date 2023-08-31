@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nea timetable proto", "Nea timetable proto\Nea timetable proto.csproj", "{B4C82A62-7098-4F6E-AA5C-EE0D6E7623AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4C82A62-7098-4F6E-AA5C-EE0D6E7623AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C82A62-7098-4F6E-AA5C-EE0D6E7623AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C82A62-7098-4F6E-AA5C-EE0D6E7623AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C82A62-7098-4F6E-AA5C-EE0D6E7623AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD6BC9CA-CF75-4FEA-B72D-6E36B82298DE}
+	EndGlobalSection
+EndGlobal

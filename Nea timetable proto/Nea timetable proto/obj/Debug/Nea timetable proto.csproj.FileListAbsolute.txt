@@ -1,0 +1,7 @@
+C:\Users\Ben09\source\repos\Nea timetable proto\Nea timetable proto\bin\Debug\Nea timetable proto.exe.config
+C:\Users\Ben09\source\repos\Nea timetable proto\Nea timetable proto\bin\Debug\Nea timetable proto.exe
+C:\Users\Ben09\source\repos\Nea timetable proto\Nea timetable proto\bin\Debug\Nea timetable proto.pdb
+C:\Users\Ben09\source\repos\Nea timetable proto\Nea timetable proto\obj\Debug\Nea timetable proto.csproj.AssemblyReference.cache
+C:\Users\Ben09\source\repos\Nea timetable proto\Nea timetable proto\obj\Debug\Nea timetable proto.csproj.CoreCompileInputs.cache
+C:\Users\Ben09\source\repos\Nea timetable proto\Nea timetable proto\obj\Debug\Nea timetable proto.exe
+C:\Users\Ben09\source\repos\Nea timetable proto\Nea timetable proto\obj\Debug\Nea timetable proto.pdb
