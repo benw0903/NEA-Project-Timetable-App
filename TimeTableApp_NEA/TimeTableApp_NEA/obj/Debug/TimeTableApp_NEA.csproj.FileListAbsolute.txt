@@ -1,0 +1,7 @@
+C:\Users\Ben09\source\repos\TimeTableApp_NEA\TimeTableApp_NEA\obj\Debug\TimeTableApp_NEA.csproj.AssemblyReference.cache
+C:\Users\Ben09\source\repos\TimeTableApp_NEA\TimeTableApp_NEA\obj\Debug\TimeTableApp_NEA.csproj.CoreCompileInputs.cache
+C:\Users\Ben09\source\repos\TimeTableApp_NEA\TimeTableApp_NEA\bin\Debug\TimeTableApp_NEA.exe.config
+C:\Users\Ben09\source\repos\TimeTableApp_NEA\TimeTableApp_NEA\bin\Debug\TimeTableApp_NEA.exe
+C:\Users\Ben09\source\repos\TimeTableApp_NEA\TimeTableApp_NEA\bin\Debug\TimeTableApp_NEA.pdb
+C:\Users\Ben09\source\repos\TimeTableApp_NEA\TimeTableApp_NEA\obj\Debug\TimeTableApp_NEA.exe
+C:\Users\Ben09\source\repos\TimeTableApp_NEA\TimeTableApp_NEA\obj\Debug\TimeTableApp_NEA.pdb
